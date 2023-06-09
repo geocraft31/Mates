@@ -1,0 +1,45 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\newcommand{\set}[1]{\mathbb{#1}}
+\newcommand{\pvec}[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
+\newcommand{\module}[1]{\|#1\|}
+
+\title{Derivades}
+\author{}
+\date{2022 - 2023}
+
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+
+\maketitle
+
+\section{Taxa de variació mitjana (TVM)}
+
+La taxa de variació mitjana d'una funció, és com varien els valors de $y$ respecte dos punts.\\
+La TVM és el pendent de la recta que pasa pels dos punts d'una funció, així:
+$$TVM=\dfrac{f(a+h)-f(a)}{a+h-a}$$
+
+\section{Derivdada en un punt}
+La derivada en un punt és la taxa de variació instantània, es a dir, és el pendent de la recta tangent de la funció en aquell punt.
+$$\lim_{h\to0}\dfrac{f(a+h)-f(a)}{h}$$
+Note:\\
+
+Si $f$ és la funció inical, $f'$ és la derivada en mates i $\dfrac{df}{dx}$ és la derivada en física.
+\section{Derivada d'una funció}
+La derivada d'una funció és la funció que assigna a cada $x$ el valor de la seva derivada.\\
+Per trobar la derivada d'una funció pots aplicar la formula de la taxa de variació instantània per a $h \to 0$.
+\subsection{Derivada d'una poténcia, $f(x)=x^n$}
+Per combartir una funció d'estil $f(x)=x^2$ a la seva derivada, podem aplicar la següent formula:
+$$f(x)=x^n\rightarrow f'(x)=n\cdot x^{n-1}$$
+Així $f(x)=x^2 \to f'(x)=2\cdot x^{2-1} \rightarrow f'(x)=2\cdot x$ 
+
+\end{document}
+

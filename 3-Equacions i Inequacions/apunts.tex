@@ -1,0 +1,62 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\drawgraph}{      \draw[-] (-1, 0) -- (1, 0) node[right] {$x$};
+\draw[-] (0, -1) -- (0, 1) node[above] {$y$};}
+
+\title{Equacions i Inequacions}
+\author{-}
+\date{Febrer 2023}
+
+\pgfplotsset{compat=1.18}
+\begin{document}
+
+\maketitle
+\section{Sistema d'equacions}
+Un sistema d'equacions implica resoldre simultaniament les equacions
+
+$$
+\begin{cases}
+    Eq_1: 2x-2y&=2\\
+    Eq_2: x-3y&=4
+\end{cases}\rightarrow \begin{cases}
+    Eq_1: 2x-2y&=2 \\
+    -2Eq_2: -2x+6y&=-8
+\end{cases}\xrightarrow{Eq_1+Eq_2}4y=-6\rightarrow y=-\frac{3}{2}$$
+
+Equacions equivalents tenent les mateixes solucions
+
+\subsection{Substitució}
+Métode per resoldre equacions que consisteix en resoldre una equació per una de les variables i despres substituis la variable trobada en l'altre equació.
+
+\subsection{Igualació}
+Aïllar la mateixa incognita en les equacions i igualar les dos parts restants.
+
+\subsection{Reducció}
+Manipular les equacions de manera que el valor numeric de les variables sigui igual a 0.
+
+\subsection{Tipus de sistemes}
+\underline{Compatible}: \textit{Té solució} $\rightarrow$ les rectes es toquen\\[5pt]
+\underline{Determinat}: \textit{Té una solució} $\rightarrow$ rectes secants\\[5pt]
+\underline{Inderminant}: \textit{Té infinites solucions} $\rightarrow$ rectes coincidents\\[5pt]
+\underline{No compatible}: \textit{No té solució} $\rightarrow$ rectes paral·leles\\[5pt]
+
+\section{Equacion exponencials}
+Equacions on la x es l'exponent d'un numero.
+$$3^x=9$$
+$$a^k=a^x \Rightarrow k=x$$
+\section{Equacions logarítmiques}
+Equacions on la x forma part del logaritme.
+$$\log_{10}{(x)}=10$$
+$$a^b=c \Longleftrightarrow \log_a{(c)}=b$$
+\subsection{Propietats dels logarítmiques}
+$$\log_a{(p)}+\log_a{(q)} = \log_a{(p\cdot q)}$$
+$$\log_a{(p)}-\log_a{(q)} = \log_a{\left(\frac{p}{q}\right)}$$
+
+\end{document}

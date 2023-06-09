@@ -1,0 +1,80 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{gensymb}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\naturals}{\mathbb{Z}}
+\newcommand{\module}[1]{\|#1\|}
+\newcommand{\complex}{\mathbb{C}}
+\newcommand{\drawgraph}{ \draw[-] (-1, 0) -- (1, 0) node[right] {$x$};
+\draw[-] (0, -1) -- (0, 1) node[above] {$y$};}
+
+\title{La geometria del triangle}
+\author{-}
+\date{Febrer 2023}
+
+\pgfplotsset{compat=1.18}
+\begin{document}
+
+\maketitle
+\section{Propietats dels traingles}
+
+$\sum angles = 180\degree = \pi$ $rad$
+La suma dels catets és més gran que la hipotenusa.\\
+En un angle agut:
+\begin{enumerate}[label= ]
+    \item $\sin\theta=\frac{CO}{H}$
+    \item $\cos\theta=\frac{CA}{H}$
+    \item $\tan\theta=\frac{CO}{CA}$
+\end{enumerate}
+Propietat fonamental de la trigonometria:
+$$\cos^2(\alpha)+\sin^2(\alpha)=1$$
+$$\frac{\sin(\alpha)}{\cos(\alpha)}=\tan(\alpha)$$
+\section{Cicrumferencia trigonometrica}
+És divideix la cicrumferencia en 4 quadrants.\\
+Els eixos representens $\cos\alpha$ i $\sin\alpha$.\\
+$-1\leq\cos(\alpha)\leq 1$ \\ $-1\leq\sin(\alpha)\leq 1$ 
+\subsection{Funcions reciporques}
+$$\sin(x)\rightarrow\frac{1}{\sin(x)}=\csc(x)$$
+$$\cos(x)\rightarrow\frac{1}{\cos(x)}=\sec(x)$$
+$$\tan(x)\rightarrow\frac{1}{\tan(x)}=\cot(x)$$
+\subsection{Angle II quadrant}
+$\alpha + \beta = \pi$, $\alpha$ i $\beta$ són suplementaris.
+$$\sin \beta = \sin(\pi - \beta)$$
+$$\cos \beta = -\cos(\pi-\beta)$$
+$$\tan \beta = -\tan(\pi-\beta)$$
+\subsection{Angle III quadrant}
+$$-\sin \beta = \sin(\pi + \beta)$$
+$$-\cos \beta = -\cos(\pi+\beta)$$
+$$\tan \beta = \tan(\pi+\beta)$$
+\subsection{Angle IV quadrant}
+$$-\sin \beta = \sin(2\pi - \beta)$$
+$$\cos \beta = \cos(2\pi-\beta)$$
+$$-\tan \beta = \tan(2\pi-\beta)$$
+\subsection{Angles coplementaris}
+La suma dels angles és $\frac{\pi}{2}$
+$$\sin \beta = \sin(2\pi - \beta)$$
+$$\cos \beta = -\cos(2\pi-\beta)$$
+$$\tan \beta = \cot(\pi-\beta)$$
+\section{Equacions trigonomètriques}
+$$\sin x = \frac{1}{2}$$
+$$x=\arcsin\left(\frac{1}{2}\right)=\frac{\pi}{6} \rightarrow \frac{\pi}{6}+2\pi k, k \in \naturals$$
+$$=\frac{5\pi}{6}\rightarrow \frac{5\pi}{6}+2\pi k, k \in \naturals$$
+\section{Area d'un triangle}
+$$A_{\triangle}=\frac{1}{2}\cdot b \cdot h$$
+$$A_c=\frac{1}{2}\cdot a \cdot b \cdot \sin C$$
+$$A_b=\frac{1}{2}\cdot a \cdot c \cdot \sin B$$
+$$A_a=\frac{1}{2}\cdot b \cdot c \cdot \sin A$$
+\subsection{Teorema del sinus}
+$$\frac{\sin C}{c}=\frac{sin B}{b}=\frac{\sin A}{a}$$
+\subsection{Teorema del cosinus}
+$$a^2+=b^2+c^2-2bc\cdot \cos A$$
+$$b^2+=a^2+c^2-2ac\cdot \cos B$$
+$$c^2+=a^2+b^2-2ab\cdot \cos C$$
+
+\end{document}

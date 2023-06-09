@@ -1,0 +1,84 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\module}[1]{\|#1\|}
+\newcommand{\complex}{\mathbb{C}}
+\newcommand{\drawgraph}{ \draw[-] (-1, 0) -- (1, 0) node[right] {$x$};
+\draw[-] (0, -1) -- (0, 1) node[above] {$y$};}
+
+\title{Equacions i Inequacions}
+\author{-}
+\date{Febrer 2023}
+
+\pgfplotsset{compat=1.18}
+\begin{document}
+
+\maketitle
+\section{Unitat imaginaria}
+$i$ és la unitat imaginaria i és el resultat de $\sqrt{-1}$
+\subsection{Nombre Complex}
+És un numero de la forma $a+bi$, on $a$, $b \in \reals$, $a$ és la part real i $b$ la part imaginária
+\subsection{Nombre Conjugat}
+Si $Z=a+bi$, el seu conjugat $\overline{Z}=a-bi$
+\subsection{Model i argument d'un $\complex$}
+Sigui $Z=a+bi$
+$$\module{Z}=\sqrt{a^2+b^2}$$
+$$arg(Z)=\arctan\left(\frac{b}{a}\right)$$
+Cal mirar sempre a quin quadrant es troba $Z$
+\section{Representació de nombre complexos}
+\subsection{Binòmica}
+$$a+bi; a,b \in \reals$$
+\subsection{Vectorial}
+$$\begin{pmatrix}
+    a\\
+    b
+\end{pmatrix}$$
+\subsection{Trigonomètrica}
+modul = $r$ i argument = $\alpha$
+$$r\left(\cos\left(\alpha\right)+i\cdot\sin\left(\alpha\right)\right)$$
+\subsection{Polar}
+$$r_{\alpha}$$
+\subsection{Exponencial}
+$$r\cdot e^{i\cdot\alpha}$$
+\subsection{Cani de representació}
+De binòmica o vectorial a polar, exponencial o trigonomètrica.
+$$r=\sqrt{a^2+b^2}$$
+$$\alpha=\arctan\left(\frac{b}{a}\right)$$
+$\alpha$ depen del quadrant.\\
+De trigonomètrica, polar o exponencial a binòmica o vectorial.
+$$a=r\cdot\cos(\alpha)$$
+$$b=r\cdot\sin(\alpha)$$
+\section{Operacions amb complexos en forma binòmica}
+Siguin $Z_1=a_1+b_1i$ i $Z_2=a_2+b_2i$
+\subsection{Suma i resta}
+$$Z_1+Z_2=\left(a_1+a_2\right)+\left(b_1+b_2\right)\cdot i$$
+$$Z_1-Z_2=\left(a_1-a_2\right)+\left(b_1-b_2\right)\cdot i$$
+\subsection{Producte de complexos}
+$$Z_1\cdot Z_2=\left(a_1+b_1i\right)\cdot\left(a_2+b_2i\right)=a_1a_2+a_1b_2i+a_2b_1i+b_1b_2i^2$$
+Recorda $i^2=-1$
+\subsection{Quaccient de complexos}
+$$\frac{Z_1}{Z_2}=\frac{a_1a_2+b_1b_2}{a_2^2+b_2^2}+\frac{b_1a_2-a_1b_2}{a_2^2+b_2^2}i$$
+\subsection{Potencies de i}
+$i=\sqrt{-1}$\\
+$i^2=\sqrt{-1}^2=-1$\\
+$i^3=i^2\cdot i =-\sqrt{-1}$\\
+$i^4=i^2\cdot i^2 = (-1)\cdot(-1)=1$\\
+$i^5=i$
+\section{Operacions amb complexos de forma polar}
+Sigui $Z_1=\left(r_1\right)_{\alpha_1}$ i $Z_2=\left(r_2\right)_{\alpha_2}$
+\subsection{Mutiplicació}
+$$Z_1\cdot Z_2 = \left(r_1 \cdot r_2\right)_{\alpha_1+\alpha_2}$$
+\subsection{Divisió}
+$$\frac{Z_1}{Z_2}=\left(\frac{r_1}{r_2}\right)_{\alpha_1-\alpha_2}$$
+\subsection{Potència}
+$$\left(Z_1\right)^n=\left(r_1^n\right)_{n\cdot\alpha_1}$$
+\subsection{Arrels amb complexos}
+$$\sqrt[n]{Z_1}=\sqrt[n]{r}_{\frac{\alpha}{n}+\frac{2\pi\cdot k}{n}}$$
+Recorda que $k = 0,1,2\dots n-1$.
+\end{document}

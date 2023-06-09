@@ -1,0 +1,314 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{gensymb}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{amsmath}
+\usepackage{enumitem}
+
+\newcommand{\module}[1]{\|#1\|}
+
+\title{Vectors}
+\author{-}
+\date{Gener 2023}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+Donats els punts $A$ i $B$ el vector $\vec{AB} = B - A \longrightarrow \vec{AB} = \begin{pmatrix}
+    b_x - a_x \\
+    b_y - a_y
+    \end{pmatrix}$\\
+$\Vec{u} = \begin{pmatrix}
+    u_1 \\
+    u_2
+\end{pmatrix}$\\[5pt]
+$
+\Vec{v} = \begin{pmatrix}
+    v_1 \\
+    v_2
+\end{pmatrix}
+$
+\\[10pt]
+$$\Vec{u} + \Vec{v} = \begin{pmatrix}
+    u_1 + v_1 \\
+    u_2 + v_2
+\end{pmatrix}
+$$
+$$\Vec{u} - \Vec{v} = \begin{pmatrix}
+    u_1 - v_1 \\
+    u_2 - v_2
+\end{pmatrix}$$
+\subsection{Coneixaments Previs}
+
+\subsection{Angle d'un vector}
+
+$$\tan(\alpha)=\frac{u_2}{u_1}$$
+$$\alpha=\arctan\left(\frac{u_2}{u_1}\right)$$
+
+\subsubsection{Mutiplicació per un escalar}
+
+    $$
+    k \cdot \Vec{u} = \begin{pmatrix}
+        k \cdot u_1 \\
+        k \cdot u_2
+    \end{pmatrix}
+    , k \in R
+    $$
+    
+
+\subsubsection{Mutiplicació de dos vectors - Producte  escalar}
+
+$$\Vec{u} \cdot \Vec{v} = u_1 \cdot v_1 + u_2 + v_2$$
+$$\Vec{u} \cdot \vec{v} = \module{\Vec{u}} \cdot \module{\Vec{v}} \cdot \cos\left({\widehat{\Vec{u}, \Vec{v}}}\right)$$
+\subsubsection{Vector Unitari}
+El mòdul del vector és 1
+
+$$\hat{u} = \dfrac{1}{\module{\Vec{u}}} \cdot \vec{u}$$
+
+\section{Equacions de la recta}
+
+Siguin $A = \left( a_1, a_2 \right)$ i $\Vec{u}=\begin{pmatrix}
+    u_1 \\
+    u_2
+\end{pmatrix}$
+
+\subsection{Equació vectorial}
+$$
+\begin{pmatrix}
+    x \\
+    y
+\end{pmatrix}
+=
+\begin{pmatrix}
+    a_1 \\
+    a_2
+\end{pmatrix}
++ \lambda
+\begin{pmatrix}
+    u_1 \\
+    u_2
+\end{pmatrix}
+$$
+$$\Vec{OX} = \Vec{OA} + \lambda \cdot \Vec{u}$$
+\subsection{Equació paramètrica}
+Dividir l'equació vectorial en dos
+\[
+\begin{cases}
+    x = a_1 + \lambda \cdot u_1 \\
+    y = a_2 + \lambda \cdot u_2
+\end{cases}\]
+
+\subsection{Equació contínua}
+Resultata d'igualar les equacions peramètriques per $\lambda$.
+$$
+\frac{x-a_1}{u_1} = \frac{y-a_2}{u_2}
+$$
+
+\subsection{Equació punt-pendent}
+$\dfrac{u_2}{u_1} = m$ on $m$ és el pendent de la recta.
+$$
+y-a_2=\frac{u_2}{u_1}\cdot \left(x-a_1\right)
+$$
+
+\subsection{Equació General o implicita}
+$$Ax + By + C = 0$$
+
+$$\begin{pmatrix}
+    A \\
+    B
+\end{pmatrix} \perp \vec{u}$$
+\subsection{Equació explícita}
+
+$$y=mx+n$$
+$n$ és la ordenada a l'origen, és a dir, valor de $y$ que fa que $x = 0$
+
+\section{Equació canònica}
+$$\frac{x}{a}+\frac{y}{b}=1$$
+$a$ i $b$ són els punts de tall no nuls
+$(a, 0)$ i $(0, b)$
+
+\section{Propietats del producte escalar}
+
+$$\vec{u} \perp \vec{v} \Longleftrightarrow \vec{u} \cdot \vec{v} = 0$$
+$$\vec{u} \parallel \vec{v} \Longleftrightarrow |\vec{u} \cdot \vec{v}| = \module{\vec{u}}\cdot\module{\vec{v}}$$
+$$\vec{u}\cdot\vec{v} < 0 \Longleftrightarrow 90\degree < \theta < 180\degree $$
+$$\vec{u}\cdot\vec{v} > 0 \Longleftrightarrow 0\degree < \theta < 90\degree$$
+
+\section{Segments}
+\subsection{Punt mig d'un segment}
+
+Donat el segment $\overline{AB}$ el punt mig $M$ és la suma del punt $A$ més el vector $\vec{AB}$ entre 2
+$$\vec{0M} = \vec{0A}+\frac{1}{2}\cdot\vec{AB}$$
+
+\subsection{Partir un segment en parts iguals}
+
+Doant el segment $\overline{PQ}$ amb punts $M$ i $N$,
+el vector $\vec{PM}$ és un terç del vector $\vec{PQ}$
+
+$$\vec{0M} = \vec{0P}+ \frac{1}{3} \cdot\vec{PQ}$$
+La formula general diria així:
+
+$$\vec{0M} = \vec{0P} + \frac{1}{n} \cdot \vec{PQ}$$
+On $\overline{PQ}$ és un segment, $M$ el punt que es vol saber i $n$ el nombre de punts totals.
+
+\section{Posició relativa}
+$P(x_0, y_0)$\\
+$r: Ax + By + C = 0$ \\[5pt]
+$r: \begin{pmatrix}
+    x \\
+    y   
+\end{pmatrix} = \begin{pmatrix}
+    a_1 \\
+    a_2
+\end{pmatrix} + \lambda \begin{pmatrix}
+    u_1 \\
+    u_2
+\end{pmatrix}$ \\[5pt]
+$s: A'x + B'y +C = 0$\\[5pt]
+$s: \begin{pmatrix}
+    x \\
+    y   
+\end{pmatrix} = \begin{pmatrix}
+    b_1 \\
+    b_2
+\end{pmatrix} + \lambda \begin{pmatrix}
+    v_1 \\
+    v_2
+\end{pmatrix}$ \\
+\subsection{Punt - Recta}
+Per compropbar si un punt pertany a una recta:
+$$P \in r, Ax_0 + By_0 + C = 0$$
+$$P \notin r, Ax_0 + By_0 + C \neq 0$$
+
+\subsection{Recta - Recta}
+
+\subsubsection{Paral·leles}
+
+$$ \frac{A}{A'} = \frac{B}{B'} \neq \frac{C}{C'}$$
+$\vec{u}, \vec{v}$ són linear dependents, $\vec{u} = k \cdot\vec{v}$\\
+Cap punt de $r$ pertany a $s$, $A_r \notin s$\\
+$|\vec{u}\cdot\vec{v}| = \module{\vec{u}}\cdot\module{\vec{v}}$
+\\[10pt]
+\subsubsection{Coincidents}
+$$\frac{A}{A'}=\frac{B}{B'}=\frac{C}{C'}$$
+$\vec{u}, \vec{v}$ són linealment dependents\\
+Tots els punts de $r$ pertanyen a $s$, $A_r \in s$
+\\[10pt]
+\subsubsection{Secants}
+$$\frac{A}{A'}\neq\frac{B}{B'}$$
+$\vec{u},\vec{v}$ són linealment independents
+\\[10pt]
+\subsubsection{Perpendiculars}
+$$\vec{u}\cdot\vec{v}=0$$
+$$
+\begin{cases}
+    r: y = m_1 \cdot x + n_1 \\
+    s: y = m_2 \cdot x + n_2
+\end{cases}
+r \perp s \Longleftrightarrow m_1 \cdot m_2 = -1
+$$
+$$\vec{n_u} = \begin{pmatrix}
+    - u_2 \\
+    u_1
+\end{pmatrix}$$
+
+\section{Rectes singulars}
+mediatriu: \textit{recte $\perp$ a una altre recta i que pasa pel seu punt mig.}\\
+bisactriu: \textit{recte que parteix l'angle que formen dos altres rectes entre dos.}\\
+altura: \textit{recte $\perp$ a un costat d'un triangle que pasa pel vertex oposat.} \\
+mediana: \textit{recte que va d'un punt mig d'un costat d'un triangle fins al vertex oposat.}\\
+
+\section{Problemes metrics}
+\subsection{Punt - Punt}
+Doants els punts $A ( a_1, a_2)$ i $B(b_1, b_2)$ la distancia entre els punts és el modul del vector.
+$$d(A, B) = \module{\vec{AB}}
+=\sqrt{\left(b_1-a_1\right)^2+\left(b_2-a_2\right)^2}$$
+\subsection{Recte - Punt}
+Si $P \in r, d(P, r) = 0$\\
+Si $P \notin r, d(P, r) = \module{\vec{PQ}}$ on $Q$ és la intersecció entre $r$ i la recta $\perp r$\\
+El punt $Q$ és la projecció de $P$ sobre $r$
+$$d(P, r)= \frac{|A\cdot x_0+B\cdot y_0+C|}{\sqrt{A^2+B^2}}$$
+\subsection{Recta - Recta}
+Coincidents, $d(r, s) = 0$\\
+Secants, $d(r, s) = 0$\\
+Paral·leles, $d(r, s) = d(P_r, s)$
+\subsection{Angles}
+Coincidents, $\alpha (r, s) = 0$\\
+Paral·leles, $\alpha (r, s) = 0$\\
+Secants: $$\alpha (r,s) = \arccos \left( \frac{\vec{u}\cdot \vec{v}}{\module{\vec{u}}\cdot\module{\vec{v}}} \right)$$
+
+\subsection{Punt Simètric}
+\subsubsection{Simètria respecte un punt}
+
+Sigui $A$ un punt, $B$ un altre punt i $A'$ el simetric de $A$ respecte $B$
+$$\vec{0A'} = \vec{0A} + \vec{AB}$$
+
+\subsubsection{Simètria respecte una recte}
+
+Siguin $r: y=m_r\cdot x+n_s$ i $A=(a_1, a_2)$\\[10pt]
+1 - Trobar $\perp$ de r que passa per $A$\\[5pt]
+Si $r \perp s, m_r \cdot m_s = -1$\\
+$$s: y = m_s\cdot x +n_s$$\\[10pt]
+2 - Troba $n_s$ substituin el punt $A$ en la equqació \\[5pt]
+$$a_2 = m_s \cdot a_1 + n_s$$\\[10pt]
+3 - Troba el punt $M$ el cual és la intersecció entre rectes\\[5pt]
+$$\begin{cases}
+    r: y = m_r \cdot x + n_r \\
+    s: y = m_s \cdot x + n_s
+\end{cases}
+$$
+4 - Solucionar el problema com la simetrai de punts
+$$\vec{0A'} = \vec{0M} + \vec{AM}$$
+\newpage
+\subsection{Llocs geomètrics}
+\underline{Mediatriu}: \textit{Lloc geomètric dels puns que equidisten 2 punts. És una recta.}\\
+\underline{Circumferència}: \textit{Lloc geomètric dels punts que equidisten d'un punt.}\\
+Equació d'una circumferència:
+$$\left(x-a\right)^2+\left(y-b\right)^2=r^2$$
+\begin{align*}
+    \begin{tikzpicture}
+        \draw[<->] (-1.5, 0) -- (1.5, 0) node[above] {$x$};
+        \draw[<->] (0, -1.5) -- (0, 1.5) node[above] {$y$};
+        \draw(0, 0) circle (1cm);
+    \end{tikzpicture}
+\end{align*}
+Equació general d'una circumferència:
+$$x^2+y^2=Ax+By+C=0$$
+$$A=-2a, B=-2b, C=a^2+b^2-r^2$$
+\subsubsection{Intersecció entre circumferència i recta}
+Siguin $r$ és el radi, $C$ és el centre i $s$ una recta.\\[10pt]
+Tangent: 1 intersecció $d(s, C) = r$\\
+Secant: 2 interseccions $d(s, C) < r$\\
+Exterior: 0 interseccions $d(s, C) > r$\\[5pt]
+Les interseccions són les solucions de les equaicons.
+\subsubsection{El·lipse}
+\textit{Lloc geomètric dels puns, tals que la suma de distancia d'un punt a dos de donats és constant.}\\
+$$\frac{\left(x-k\right)^2}{a^2}+\frac{\left(y-h\right)^2}{b^2}=1$$
+On $(k, h)$ és el centre de la el·lipse, el punt mig entre els dos focus.\\
+$a$ és el semi eix horitzontal i $b$ el semi eix vertical.
+\begin{align*}
+    \begin{tikzpicture}
+        \draw[<->] (-1.5, 0) -- (1.5, 0) node[above] {$x$};
+        \draw[<->] (0, -1.5) -- (0, 1.5) node[above] {$y$};
+        \draw(0, 0) ellipse (1cm and 0.5cm);
+    \end{tikzpicture}
+\end{align*}
+\newpage
+\subsubsection{Paràbola}
+\textit{Lloc geomètric dels punts que equidisten d'un punt (focus) i una recta (directriu).}\\
+\underline{Directriu horitzontal}
+$$y=ax^2+bx+c$$
+$$x^2=-2py$$
+$p$ és la distancia entre el focus i la directriu.\\
+
+\underline{Directriu vertical}
+$$x=ay^2+by+c$$
+$$y^2=-2px$$
+\subsubsection{Hipèrbola}
+\textit{Llog geomètric dels punts tals que la diferència de distáncies d'un punt a dos donats (focus) és constant.}\\
+$$\frac{\left(x-k\right)^2}{a^2}-\frac{\left(y-h\right)^2}{b^2}=1$$
+
+\end{document}

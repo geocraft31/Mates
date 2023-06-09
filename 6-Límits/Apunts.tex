@@ -1,0 +1,91 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\newcommand{\set}[1]{\mathbb{#1}}
+\newcommand{\pvec}[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
+\newcommand{\module}[1]{\|#1\|}
+
+\title{Límits}
+\author{}
+\date{2022 - 2023}
+
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+
+\maketitle
+
+\section{Successions}
+
+$u_1(n)=n^2 \rightarrow$ Divergent $\infty^2=\infty$\\[5pt]
+$u_2(n)=\frac{1}{n_1} \rightarrow$ Convergent $\lim\limits_{n\to\infty}u_2=0$\\[5pt]
+$u_3(n)=e^n \rightarrow$ Divergent $\lim\limits_{n\to\infty} u_3=\infty$\\[5pt]
+$u_4(n)=\log n \rightarrow$ Divergent $\lim\limits_{n\to\infty}=\infty$\\[5pt]
+$u_5(n)=\left(1+\frac{1}{n}\right)^n \rightarrow$ Divergent $\lim\limits_{n\to\infty}u_5 =\infty$\\[10pt]
+$$\lim\limits_{x\to 2} x^2=4$$
+$$\text{$x$ mai arriba a $2$, per tant $x^2$ mai és $4$}$$
+\section{Límits}
+\subsection{Definició informal de límit}
+Si $f(x)$ es pot aproximar a un valor ($\mathbb{R}$) $A$, fent que $x$ sigui suficientment proper a $a$ (pero no igual), diem que té límit a $A$ quan $x$ tendeix a $a$, i escrivim.
+$$\lim\limits_{x\to a} f(x)=A$$
+\subsection{Tipus de límits}
+\begin{enumerate}
+    \item Límit a l'infinit $\pm\infty$
+    \item Límit en un punt $(x\to a )$ límits laterals $x\to a^{\pm}$
+\end{enumerate}
+\newpage
+\subsection{Propietats dels límits}
+Si $f(x)$ i $g(x)$ són funcions i existeix $\lim\limits_{x\to a}$ i $\lim\limits_{x\to a} g(x)$, c és constant.
+\begin{enumerate}
+    \item $\lim\limits_{x\to a} c=c$
+    \item $\lim\limits_{x\to a} cf(x) =c\cdot\lim\limits_{x\to a}f(x)$
+    \item $\lim\limits_{x\to a} \left[f(x) \pm g(x)\right]=\lim\limits_{x\to a} f(x) \pm \lim\limits_{x\to a} g(x)$
+    \item $\lim\limits_{x\to a} f(x)\cdot g(x)=\left(\lim\limits_{x\to a} f(x)\right)\cdot \left(\lim\limits_{x\to a} g(x)\right)$
+    \item $\lim\limits_{x\to a} \frac{f(x)}{g(x)}=\dfrac{\lim\limits_{x\to a} f(x)}{\lim\limits_{x\to a} g(x)}$, sempre que $\lim\limits_{x\to a} g(x) \neq 0$
+\end{enumerate}
+\subsection{Límits a l'infinit}
+
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{c|c|c}
+        $\lim\limits_{x\to +\infty} x^2=\infty$ & $\lim\limits_{x\to +\infty} \frac{1}{x}=0$ & $\lim\limits_{x\to +\infty} e^x=\infty$ \\ \hline
+        $\lim\limits_{x\to -\infty} x^2=\infty$ & $\lim\limits_{x\to -\infty} \frac{1}{x}=0$ &$\lim\limits_{x\to -\infty} e^x=0$ \\ 
+    \end{tabular}
+\end{table}
+
+\subsubsection{Valors}
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{c|c|c}
+        $\dfrac{k}{\infty}=0$ & $\dfrac{k}{0}=\infty$ & $\dfrac{\infty}{k}=\infty \text{, si} k \neq 0$ \\[10pt] \hline
+        $k \pm \infty = \infty$ & $k\left(\pm\infty\right) =\pm\infty$ & $\phantom{\downarrow\uparrow}$ \\[10pt]
+    \end{tabular}
+\end{table}
+En funcions polinòmiques el límit és igual al límit del térme de grau més gran.\\[10pt]
+En cas que substituïnt les $x$ per $\infty$ quedi $\frac{\infty}{\infty}$, s'ha de dividir el valor del límit per $x$, ja que $\frac{\infty}{\infty}$ és una indeterminació.\\[10pt]
+En cas que substituïnt les $x$ per $\infty$ quedi $\infty-\infty$, s'ha de mutiplicar el valor del límit per el seu conjugat, ja que $\infty - \infty$ és una indeterminació.\\[10pt]
+\subsection{Indeterminacions}
+\begin{enumerate}[label=]
+    \item $\dfrac{\infty}{\infty} \Rightarrow$ s'agafen els valors dominants (grau més gran).
+    \item $\infty -\infty \Rightarrow$ es mutiplica per el conjugat.
+    \item $\dfrac{0}{0} \Rightarrow$ aplicar propietats algebraiques par arribar a altres indeterminacions.
+    \item $0 \cdot \infty\Rightarrow$ aplicar propietats algebraiques par arribar a altres indeterminacions.
+    \item $1^\infty\Rightarrow$ intentar arribar a una expressió d'aquest estil: $\lim\limits_{x\to\infty}\left(1 +\dfrac{1}{f(x)}\right)^{f(x)}$
+\end{enumerate}
+\subsection{Continuitat d'una funció}
+Una funció $f$ és contínua en $x=a$ si $\exists f(a)$ i $\exists\lim\limits_{x\to a} f(a)$, és a dir, $\lim\limits_{x\to a^-} f(a) = \lim\limits_{x\to a^+} f(a)=k$\\\\
+Si  $\exists \lim\limits_{x\to a} f = k \neq f(a) \rightarrow$ discontinuïtat evitable.\\\\
+Si $\lim\limits_{x\to a^-} f = k_1 $ i $\lim\limits_{x\to a^+} = k_2$ i $k_1 \neq k_2 \rightarrow$ discontinuïtat de salt.\\\\
+Si $\lim\limits_{x\to a^-} f(a) = \pm \infty$ i/o $\lim\limits_{x\to a^+} f(a)=\pm\infty \rightarrow$ discontinuïtat asimptótica.
+\subsection{Asímptotes}
+A.Verticals: $x=k,\phantom{\rightarrow} k\in \set{R}, \phantom{\rightarrow}\lim\limits_{x\to k} f=\infty$\\\\
+A.Horitzontals: $y=k, \phantom{\rightarrow} k\in\set{R}, \phantom{\rightarrow} \lim\limits_{x\to\infty} f=k$\\\\
+A.Obliqües: $y=mx +n,\phantom{\rightarrow} m=\lim\limits_{x\to\infty}\left(f(x)\cdot\frac{1}{x}\right),\phantom{\rightarrow} n=\lim\limits_{x\to\infty}\left(f(x)-mx\right)$
+\end{document}
+
